@@ -61,3 +61,36 @@ Known issues
             return new DataTablesJsonResult(response, true);
         }
 
+Front End Example:
+
+        $("#m_table_1").DataTable({
+            responsive: !0,
+            searching: false,
+            lengthChange: false,
+            processing: true,
+            serverSide: true,
+            pageLength: 50,
+            ajax: {
+                url: Url,
+                type: "POST",
+                datatype: "json",
+            },
+            columns: [{
+                data: "PkId",
+                defaultContent: "",
+                searchable: false,
+                visible: false,
+            },
+            {
+                data: "Icon",
+                defaultContent: "",
+                searchable: false,
+                orderable: false,
+            }, {
+                data: "ModuleName",
+                defaultContent: "",
+                searchable: false
+            }
+            ],
+        })
+    
