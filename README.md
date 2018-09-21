@@ -94,7 +94,7 @@ Front End Example:
             ],
         })
     
-Add In Startup.cs
+Add In Startup.cs : 
 
 services.RegisterDataTables(ctx =>
             {
