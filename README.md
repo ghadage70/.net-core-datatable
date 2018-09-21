@@ -42,3 +42,7 @@ Drop it!
 2.0.0 (stable) is faster, better coded and fully tested. DataTables.Mvc is now completely discontinued.
 Known issues
 - There are some issues while trying to run all tests simultaneously. I'll try to fix that by including some test ordering. - Extension methods do not have tests yet and should not be used on production code.
+
+
+
+
