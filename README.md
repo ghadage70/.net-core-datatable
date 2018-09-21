@@ -94,3 +94,10 @@ Front End Example:
             ],
         })
     
+Add In Startup.cs
+
+services.RegisterDataTables(ctx =>
+            {
+                var appJson = ctx.ValueProvider.GetValue("data").FirstValue ?? "{}";
+                return JsonConvert.DeserializeObject<IDictionary<string, object>>(appJson);
+            }, true);
