@@ -46,7 +46,7 @@ Known issues
  Example : -
 
 
-[HttpPost("[action]")]
+         [HttpPost("[action]")]
         [AllowAnonymous]
         public IActionResult DashBoardModuleGrid([FromForm] DataTables.AspNet.Core.IDataTablesRequest request)
         {
