@@ -43,6 +43,21 @@ Drop it!
 Known issues
 - There are some issues while trying to run all tests simultaneously. I'll try to fix that by including some test ordering. - Extension methods do not have tests yet and should not be used on production code.
 
+ Example : -
 
 
+[HttpPost("[action]")]
+        [AllowAnonymous]
+        public IActionResult DashBoardModuleGrid([FromForm] DataTables.AspNet.Core.IDataTablesRequest request)
+        {
+            var data = _ModuleMasterRepository.GetAll();
+            var response = data.ToDataSourceResult(request, x => new Admin_ModuleMaster
+            {
+                PkId = x.PkId,
+                ModuleName = x.ModuleName,
+                BaseUrl = x.BaseUrl,
+                IsActive = x.IsActive,
+            });
+            return new DataTablesJsonResult(response, true);
+        }
 
